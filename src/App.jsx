@@ -5,17 +5,19 @@ import Ejercicio2 from "./Ejercicios/Ejercicio2";
 import PiedraPapelTijeraV2 from "./Ejercicios/PiedraPapelTijeraV2";
 import Correcciones from "./estados/Correcciones";
 import Estados from "./estados/Estados";
+import FormulariosControlados from "./formularios/FormulariosControlados";
+import FormulariosNoControlados from "./formularios/FormulariosNoControlados";
 import Llamadas from "./llamadas/Llamadas";
 import LlamadasSr from "./llamadas/LlamadasSr";
 import Promesas from "./promesas/Promesas";
 import Card from "./props/Card/Card";
 import ComponenteA from "./props/ComponenteA";
+import ToDo from "./ToDoList/ToDo";
 
 const App = () => {
   return (
     <>
-      <Card />
-      <Card />
+      <ToDo />
     </>
   );
 };
