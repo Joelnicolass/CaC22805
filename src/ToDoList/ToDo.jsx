@@ -1,12 +1,39 @@
 import React, { useState } from "react";
-import styles from "./ToDo.module.css";
+import useForm from "../hooks/useForm";
+import { todoForm } from "./helpers/ToDoForm";
 
 const ToDo = () => {
-  const [activo, setActivo] = useState(true);
+  const { form, handleChange, handleSubmit } = useForm(todoForm);
+
+  const funcion = () => {
+    console.log(form);
+  };
 
   return (
-    <div className={activo ? styles["container-1"] : styles["container-2"]}>
-      ToDo
+    <div>
+      <form
+        onSubmit={(e) => {
+          handleSubmit(e, funcion);
+        }}
+      >
+        <input
+          type="text"
+          value={form.titulo}
+          onChange={handleChange}
+          name="titulo"
+        />
+        <input
+          type="text"
+          value={form.descripcion}
+          onChange={handleChange}
+          name="descripcion"
+        />
+        <button type="submit">agregar tarea</button>
+      </form>
+
+      <div>
+        <h1>Lista de tareas</h1>
+      </div>
     </div>
   );
 };
